@@ -1,7 +1,14 @@
 const btns = document.querySelectorAll(".button");
 const bSubmit = document.querySelector(".button-convert");
 const radios = document.querySelectorAll("input[type=radio]")
-let vw = 1440;
+
+const SIZES = {
+    DESCTOP: 1920,
+    TABLET: 768,
+    MOBILE: 375
+}
+
+let vw = SIZES.DESCTOP;
 
 btns.forEach((btn) => {
     btn.addEventListener("click", (e) => {
@@ -12,11 +19,11 @@ btns.forEach((btn) => {
         let actButton = e.target.closest("p")
         actButton.classList.add("button-active")
         if (actButton.classList.contains("button-desctop")) {
-            vw = 1440;
+            vw = SIZES.DESCTOP;
         } else if (actButton.classList.contains("button-tablet")) {
-            vw = 768;
+            vw = SIZES.TABLET;
         } else {
-            vw = 360;
+            vw = SIZES.MOBILE;
         }
         document.getElementById("iBec").value = Calculate();
     });
