@@ -5,7 +5,7 @@ const radios = document.querySelectorAll("input[type=radio]")
 const SIZES = {
     DESCTOP: 1920,
     TABLET: 768,
-    MOBILE: 375
+    MOBILE: 440
 }
 
 let vw = SIZES.DESCTOP;
